@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DoiRest } from '../lib/components/Doi/DoiRest'
-import { MapDatacite } from '../lib/components/Doi/MapDatacite'
+import { MapDatacite } from '../lib/components/Doi/mapdatacite'
 
 
 /**
