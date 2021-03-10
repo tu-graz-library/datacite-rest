@@ -51,7 +51,6 @@ class CreateDoi extends Component {
   
       // retrieve
       let response = _doirest.create(mapped, auth).then(data=>{
-        console.log('dataaa', data)
         return data;
       });
       console.log(response)
