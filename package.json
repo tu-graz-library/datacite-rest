@@ -1,6 +1,6 @@
 {
   "name": "datacite-rest",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components",
   "main": "dist/cjs/index.js",
   "browser": "dist/cjs/index.js",
@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.9.0",
-    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-replace": "^2.3.4",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
@@ -36,7 +35,8 @@
     "lodash": "^4.17.15",
     "semantic-ui-react": "^0.88.0",
     "semantic-ui-css": "^2.4.1",
-    "@babel/runtime": "^7.9.0"
+    "@babel/runtime": "^7.9.0",
+    "axios": "^0.21.1"
   },
   "scripts": {
     "start": "react-scripts start",
