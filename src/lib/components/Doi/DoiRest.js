@@ -1,4 +1,6 @@
 import axios from 'axios';
+import {DecryptAES} from '../cryptodecript';
+
 /**
  * API client response.
  *
@@ -19,18 +21,25 @@ export class DoiRest {
       this.createUrl = createUrl;
     }
 
+
+
   /**
    * Calls the API to create a new DOI.
    *
    * @param {object} record - Serialized record
    * @param {object} auth - Cridentials for DOI
    */
-  async create(record, auth) {
+  async create(record, auth, iv) {
     try {
       let response = await axios.post(
         this.createUrl,
         record,
-        { headers: { 'Content-Type': 'application/vnd.api+json' }, auth: {username: auth.username, password: auth.password } }
+        { headers: { 'Content-Type': 'application/vnd.api+json' }, auth: {username: auth.username, password:
+          DecryptAES(
+          auth.password,
+          "01ab38d5e05c92aa098921d9d4626107133c7e2ab0e4849558921ebcc242bcb0",
+          iv
+        ) } }
       );
       return new DoiRestResponse(
         response.data,
