@@ -9,7 +9,7 @@
  *
  */
 
-export function MapDatacite(metadata, recordid, prefix) {
+export function MapDatacite(metadata, recordid, prefix, suffix) {
   // use this to generate random string
   // let r = Math.random().toString(36).substring(7);
 
@@ -31,11 +31,11 @@ export function MapDatacite(metadata, recordid, prefix) {
 
     const dataciterecord = {
         data : {
-          id: prefix+"/datacite-"+recordid,
+          id: prefix+"/"+suffix+"-"+recordid,
           type: "dois",
           attributes: {
             event: "publish",
-            doi: prefix+"/datacite-"+recordid,
+            doi: prefix+"/"+suffix+"-"+recordid,
             creators,
             titles: [{
               title: metadata.title
