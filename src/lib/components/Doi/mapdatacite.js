@@ -9,7 +9,7 @@
  *
  */
 
-export function MapDatacite(metadata, recordid, prefix, suffix) {
+export function MapDatacite(metadata, recordid, prefix, suffix, host_url) {
   // use this to generate random string
   // let r = Math.random().toString(36).substring(7);
 
@@ -46,7 +46,7 @@ export function MapDatacite(metadata, recordid, prefix, suffix) {
               resourceType: metadata.resource_type.type,
               resourceTypeGeneral: "Other"
             },
-            url: "https://repository.tugraz.at",
+            url: "https://"+host_url+"/records/"+recordid,
             schemaVersion: "http://datacite-rest.org/schema/kernel-4"
           }
         }
